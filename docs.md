@@ -93,3 +93,81 @@ To import redirects in bulk using the Redirect Manager ACS AEM tool, follow thes
   | /us-old-page   | /us-new-page  | 301           |
   | /uk-old-page   | /uk-new-page  | 302           |
   ```
+
+---
+
+Certainly! Here's the formatted content for a Markdown (.md) file:
+
+```markdown
+# Sample Table Data Format for Renovator XLSX Spreadsheet
+
+Below is a sample table data format for the XLSX spreadsheet when performing multiple moves or renames using Renovator:
+
+| Source             | Destination            |
+| ------------------ | ---------------------- |
+| /content/page1     | /content/new-location1 |
+| /content/page2     | /content/new-location2 |
+| /content/folder1   | /content/new-folder1   |
+| /content/folder2   | /content/new-folder2   |
+| /images/image1.jpg | /images/new-image1.jpg |
+| /images/image2.jpg | /images/new-image2.jpg |
+
+**In this example:**
+
+- The first row specifies the column headers "Source" and "Destination."
+
+- Each subsequent row represents a move or rename operation.
+
+- Multiple sources can be listed with the same destination, indicating the merging of folders.
+
+- It's essential to avoid moving the same source folder to multiple destinations.
+
+**Usage Instructions:**
+
+1. **Create a new spreadsheet in XLSX format.**
+2. **Set the first row with "Source" and "Destination" as headers.**
+3. **Add rows for each move, specifying the source and destination.**
+4. **Save the file as an XSLX spreadsheet and close Excel.**
+5. **In the Renovator tool, leave source and destination blank and provide the spreadsheet for the "Multiple Moves" field.**
+6. **Configure other fields as needed.**
+7. **Perform a dry run to validate the file and preview affected items.**
+8. **Click "Start Process" to execute the multiple moves or renames.**
+
+Adjust the source and destination paths based on your AEM repository structure and the specific moves or renames you want to perform.
+```
+
+Certainly! Below is a sample table data format for the XLSX spreadsheet when performing multiple moves or renames using Renovator:
+
+```plaintext
+| Source             | Destination              |
+|--------------------|--------------------------|
+| /content/page1     | /content/new-location1   |
+| /content/page2     | /content/new-location2   |
+| /content/folder1   | /content/new-folder1     |
+| /content/folder2   | /content/new-folder2     |
+| /images/image1.jpg | /images/new-image1.jpg   |
+| /images/image2.jpg | /images/new-image2.jpg   |
+```
+
+In this example:
+
+- The first row specifies the column headers "Source" and "Destination."
+
+- Each subsequent row represents a move or rename operation.
+
+- Multiple sources can be listed with the same destination, indicating the merging of folders.
+
+- It's essential to avoid moving the same source folder to multiple destinations.
+
+Save this table data as an XLSX spreadsheet and use it in the Renovator tool following the steps mentioned in the documentation:
+
+1. **Create a new spreadsheet in XLSX format.**
+2. **Set the first row with "Source" and "Destination" as headers.**
+3. **Add rows for each move, specifying the source and destination.**
+4. **Save the file as an XSLX spreadsheet and close Excel.**
+5. **In the Renovator tool, leave source and destination blank and provide the spreadsheet for the "Multiple Moves" field.**
+6. **Configure other fields as needed.**
+7. **Perform a dry run to validate the file and preview affected items.**
+8. **Click "Start Process" to execute the multiple moves or renames.**
+
+Adjust the source and destination paths based on your AEM repository structure and the specific moves or renames you want to perform.
