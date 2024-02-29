@@ -76,6 +76,7 @@ To import redirects in bulk using the Redirect Manager ACS AEM tool, follow thes
 ### Additional Notes on Redirects
 
 - Both `Source URL` and `Status Code` are mandatory for Redirect Manager ACS AEM tool.
+- Applying both "Source URL" and "Status Code" is mandatory when using the Redirect Manager ACS AEM tool. The "Source URL" is necessary to specify which URL is to be redirected, and the "Status Code" is needed to indicate the type of redirect, such as 301 for a permanent redirect and 302 for a temporary redirect.
 - Example: Redirecting to a specific location within a page using a hashtag (`#`) in the `Target URL`.
 
   ```plaintext
