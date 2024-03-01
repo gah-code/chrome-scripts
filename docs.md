@@ -96,8 +96,6 @@ To import redirects in bulk using the Redirect Manager ACS AEM tool, follow thes
 
 ---
 
-Certainly! Here's the formatted content for a Markdown (.md) file:
-
 ```markdown
 # Sample Table Data Format for Renovator XLSX Spreadsheet
 
@@ -136,8 +134,6 @@ Below is a sample table data format for the XLSX spreadsheet when performing mul
 Adjust the source and destination paths based on your AEM repository structure and the specific moves or renames you want to perform.
 ```
 
-Certainly! Below is a sample table data format for the XLSX spreadsheet when performing multiple moves or renames using Renovator:
-
 ```plaintext
 | Source             | Destination              |
 |--------------------|--------------------------|
@@ -169,5 +165,3 @@ Save this table data as an XLSX spreadsheet and use it in the Renovator tool fol
 6. **Configure other fields as needed.**
 7. **Perform a dry run to validate the file and preview affected items.**
 8. **Click "Start Process" to execute the multiple moves or renames.**
-
-Adjust the source and destination paths based on your AEM repository structure and the specific moves or renames you want to perform.
