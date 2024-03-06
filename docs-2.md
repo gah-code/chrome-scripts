@@ -91,3 +91,5 @@ Once a reporting process is done, it stores any info it generated. From the proc
 View: This opens the report in a new browser tab. You can copy info from here and stick it in other apps if you want.
 Download (Excel): This turns the report into an Excel doc and downloads it to your computer. You can open it up in whatever spreadsheet tool you like and mess around with the data if you need to.
 You can find more info about generated reports in the Tools section associated with the process that made the report. If you don't see the buttons, then either the process was stopped weirdly, it's still running, or it wasn't a process that makes a report.
+
+[NOTES](https://gilberts-notes.notion.site/AEM-ACS-TOOLS-203e946469e64dcd9ddd517649dc6de8)

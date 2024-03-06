@@ -165,3 +165,95 @@ Save this table data as an XLSX spreadsheet and use it in the Renovator tool fol
 6. **Configure other fields as needed.**
 7. **Perform a dry run to validate the file and preview affected items.**
 8. **Click "Start Process" to execute the multiple moves or renames.**
+
+---
+
+## The option that corresponds to the "append" behavior is:
+
+Recommendation: Create and Merge Properties - Create new nodes and update existing nodes with missing properties. Existing properties are left alone.
+
+If you want to append new tags to existing nodes without modifying the existing ones and create missing intermediate nodes as regular folders, you might consider using:
+
+Existing Action: Append
+Structure Node Type: Sling:Folder
+If you want to overwrite existing tags with the new ones and create missing intermediate nodes as regular folders, you might consider using:
+
+Existing Action: Overwrite Existing Only
+Structure Node Type: Sling:Folder
+
+**Create and Merge Properties:**
+
+- Creates new nodes.
+- Updates existing nodes with missing properties.
+- Existing properties are left unchanged.
+- Useful when you want to add new content and update missing properties for existing content.
+
+In the context of appending new tags to existing nodes without modifying the existing ones, you would use the "Create and Merge Properties" option.
+
+So, for your specific scenario, you would choose:
+
+- **Existing Action:** Create and Merge Properties
+- **Structure Node Type:** Sling:Folder (or other types based on your requirements)
+
+This option ensures that new tags are added to existing properties without overwriting or modifying the existing ones.
+
+Certainly! To further illustrate the "Create and Merge Properties" option for appending new tags to existing nodes, here's a visual representation of sample data in a table:
+
+**Table: Sample Data for "Create and Merge Properties" Option**
+
+| path                           | cq:tags                                                                                                                                                                    |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /content/site/en/page1         | /roberthalf/tags-rh/content-type/article/tag:Development,/roberthalf/tags-rh/content-type/article/tag:Technology,/roberthalf/tags-rh/content-type/article/tag:Professional |
+| /content/site/en/folder1/page2 | /roberthalf/tags-rh/content-type/article/tag:Development                                                                                                                   |
+| /content/site/en/folder2/page3 | /roberthalf/tags-rh/content-type/article/tag:Technology,/roberthalf/tags-rh/content-type/article/tag:Professional                                                          |
+| /content/site/en/page4         | /roberthalf/tags-rh/content-type/article/tag:Leadership,/roberthalf/tags-rh/content-type/article/tag:Management,/roberthalf/tags-rh/content-type/article/tag:Skills        |
+| /content/site/en/folder3/page5 | /roberthalf/tags-rh/content-type/article/tag:Technology                                                                                                                    |
+| /content/site/en/folder4/page6 | /roberthalf/tags-rh/content-type/article/tag:Career-Development,/roberthalf/tags-rh/content-type/article/tag:Professional-Growth                                           |
+
+**Explanation:**
+
+- Each row represents a different content page.
+- The `path` column specifies the path of the content page.
+- The `cq:tags` column contains tag paths starting from `/roberthalf/tags-rh/content-type/article/`.
+- Tags are separated by commas within the `cq:tags` cell.
+
+This table is designed to illustrate the "Create and Merge Properties" behavior, where new tags are appended to existing nodes without modifying the existing properties. Adjust the content, paths, and tags based on your specific AEM instance's structure and requirements. Always test your configuration in a controlled environment before applying it to a production system.
+
+In the context of ACS AEM Data Importer, the "Existing action" and "Structure node type" settings help determine how the data should be managed if the destination nodes (pages or content structure) already exist or do not exist yet.
+
+Here's a general guide on how to set these options:
+
+Existing Action:
+
+Append: Adds new values to existing multi-value properties without modifying existing values. Use this if you want to add new tags to pages without removing existing ones.
+Overwrite: Replaces existing values with new values. Use this if you want to replace all existing tags on a page with the new ones specified in the CSV file.
+Fail: Fails the import if the destination nodes already exist. Use this if you want to ensure that data is only imported into non-existing nodes.
+Structure Node Type:
+
+Sling:OrderedFolder: Creates folders with an ordered structure. This is useful when you want to maintain a specific order among child nodes.
+Cq:Page: Creates nodes of type cq:Page. This is suitable for pages in AEM.
+Sling:Folder: Creates regular folders without an ordered structure.
+Example Configuration:
+
+If you want to append new tags to existing pages without modifying the existing ones and create any missing intermediate nodes as regular folders, your configuration might look like this:
+
+For example, if your import path is /content/mywebsite/en/page1 and the /content/mywebsite/en/ structure doesn't exist, AEM has to determine what type of nodes to create for the missing en and potentially mywebsite folders.
+
+Here's how you might handle this:
+
+Define the Desired Node Types:
+
+Decide what node types you want for the missing intermediate nodes. This might depend on your content structure and requirements.
+Update Import Configuration:
+
+In the configuration of your Data Importer or ACS AEM Commons import process, there should be a setting related to the "Structure node type" or "Intermediate node type."
+Specify the desired node type(s) for the missing intermediate nodes in this configuration.
+Run the Import Process:
+
+Execute the data import process.
+Verify Results:
+
+Check the content hierarchy to ensure that the missing intermediate nodes are created with the specified node type(s).
+For instance, if you are importing language versions like /content/mywebsite/en/page1, you might want the en node to be of type sling:OrderedFolder or cq:Page. If you are importing content that represents a category or tag structure, you might use a specific node type like cq:Tag or cq:Page.
+
+The specific configuration and options might vary depending on the version of ACS AEM Commons or Data Importer you are using. Consult the documentation or configuration settings related to the tool you're using for more precise information on how to handle the structure node types during imports.
